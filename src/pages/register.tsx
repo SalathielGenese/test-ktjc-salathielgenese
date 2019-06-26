@@ -72,7 +72,6 @@ export const Register = () => {
 
         if ( !current ) return;
 
-        // FIXME to base64 string when we get image from camera OR filesystem
         const inputListener = ( event: FormEvent<HTMLIonCheckboxElement> ) =>
             setAgree( event.currentTarget.checked! )
         ;
