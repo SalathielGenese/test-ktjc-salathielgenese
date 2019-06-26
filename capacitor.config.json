@@ -3,5 +3,5 @@
   "appName": "Salathiel's KTJC test",
   "bundledWebRuntime": false,
   "npmClient": "npm",
-  "webDir": "www"
+  "webDir": "build"
 }
