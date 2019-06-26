@@ -1,5 +1,5 @@
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonInput, IonRow, IonCol, IonButton } from '@ionic/react';
-import React, { MutableRefObject } from 'react';
+import React, { MutableRefObject, forwardRef } from 'react';
 import { Random } from '../utils/random';
 import { Link } from 'react-router-dom';
 
@@ -7,12 +7,11 @@ import { Link } from 'react-router-dom';
 
 export type Props =
     & {
-        ref: MutableRefObject<HTMLFormElement | null>,
         username: MutableRefObject<HTMLIonInputElement | null>,
         password: MutableRefObject<HTMLIonInputElement | null>,
     };
 
-export const LoginPresentation = ({ ref, username, password }: Props ) => {
+export const LoginPresentation = forwardRef<HTMLFormElement, Props>( ({ username, password }, ref ) => {
     const id = { username: Random.string(), password: Random.string() };
 
     return <>
@@ -70,4 +69,4 @@ export const LoginPresentation = ({ ref, username, password }: Props ) => {
             </form>
         </IonContent>
     </>;
-};
+} );
