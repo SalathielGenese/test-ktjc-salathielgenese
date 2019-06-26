@@ -1,11 +1,18 @@
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonInput, IonRow, IonCol, IonButton } from '@ionic/react';
 import { Random } from '../utils/random';
-import React from 'react';
+import React, { MutableRefObject } from 'react';
 import { Link } from 'react-router-dom';
 
 
 
-export const LoginPresentation = () => {
+export type Props =
+    & {
+        ref: MutableRefObject<HTMLFormElement | null>,
+        username: MutableRefObject<HTMLIonInputElement | null>,
+        password: MutableRefObject<HTMLIonInputElement | null>,
+    };
+
+export const LoginPresentation = ({ ref, username, password }: Props ) => {
     const id = { username: Random.string(), password: Random.string() };
 
     return <>
@@ -15,7 +22,7 @@ export const LoginPresentation = () => {
             </IonToolbar>
         </IonHeader>
         <IonContent padding>
-            <form>
+            <form ref={ ref }>
                 <div>
                     <label htmlFor={ id.username }>
                         Username
@@ -24,6 +31,7 @@ export const LoginPresentation = () => {
                     <IonInput
                         required
                         type="text"
+                        ref={ username }
                         autocomplete="off"
                         id={ id.username }
                         style={{ borderBottom: '1px solid lightgrey'}}
@@ -38,6 +46,7 @@ export const LoginPresentation = () => {
                     <IonInput
                         required
                         type="password"
+                        ref={ password }
                         autocomplete="off"
                         id={ id.password }
                         style={{ borderBottom: '1px solid lightgrey'}}
