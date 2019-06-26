@@ -20,13 +20,15 @@ import "@ionic/core/css/display.css";
 
 import { Register } from './pages/register';
 import { Login } from './pages/login';
+import Home from './pages/Home';
 
 const App: React.SFC = () => (
   <Router>
-    <Route exact path="/" render={() => <Redirect to="/login"/>} />
+    <Route exact path="/" render={() => <Redirect to="/"/>} />
     <div className="App">
       <IonPage>
         <IonRouterOutlet>
+          <Route path="/" component={ Home } exact={true} />
           <Route path="/login" component={ Login } exact={true} />
           <Route path="/register" component={ Register } exact={true} />
         </IonRouterOutlet>
