@@ -31,7 +31,7 @@ export const Login = () => {
         if ( !current ) return;
 
         const inputListener = ( event: FormEvent<HTMLIonInputElement> ) =>
-            setUsername( event.currentTarget.value! )
+            setPassword( event.currentTarget.value! )
         ;
 
         current.addEventListener( 'input', inputListener as never );
