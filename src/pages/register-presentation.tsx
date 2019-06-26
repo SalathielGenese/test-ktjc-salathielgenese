@@ -117,7 +117,7 @@ export const RegisterPresentation = forwardRef<HTMLFormElement, Props>( ({ isVal
                     &nbsp;
                     <IonInput
                         required
-                        type="url"
+                        type="text"
                         ref={ image }
                         id={ id.image }
                         autocomplete="off"
