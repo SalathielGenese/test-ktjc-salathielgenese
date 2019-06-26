@@ -18,7 +18,7 @@ export const LoginPresentation = forwardRef<HTMLFormElement, Props>( ({ isValid,
     return <>
         <IonHeader>
             <IonToolbar>
-                <IonTitle>Identify</IonTitle>
+                <IonTitle>Login</IonTitle>
             </IonToolbar>
         </IonHeader>
         <IonContent padding>
