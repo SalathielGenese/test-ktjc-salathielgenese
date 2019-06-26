@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Salathiel\'s KTJC test</string>
+    <string name="title_activity_main">Salathiel\'s KTJC test</string>
+    <string name="package_name">test.ktjc.salathiel.genese.name</string>
+    <string name="fileprovider_authority">test.ktjc.salathiel.genese.name.fileprovider</string>
+    <string name="custom_url_scheme">test.ktjc.salathiel.genese.name</string>
+</resources>

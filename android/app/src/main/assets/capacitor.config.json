@@ -1,0 +1,7 @@
+{
+  "appId": "test.ktjc.salathiel.genese.name",
+  "appName": "Salathiel's KTJC test",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build"
+}
