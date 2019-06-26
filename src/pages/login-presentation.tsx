@@ -7,11 +7,12 @@ import { Link } from 'react-router-dom';
 
 export type Props =
     & {
+        isValid?: boolean,
         username: MutableRefObject<HTMLIonInputElement | null>,
         password: MutableRefObject<HTMLIonInputElement | null>,
     };
 
-export const LoginPresentation = forwardRef<HTMLFormElement, Props>( ({ username, password }, ref ) => {
+export const LoginPresentation = forwardRef<HTMLFormElement, Props>( ({ isValid, username, password }, ref ) => {
     const id = { username: Random.string(), password: Random.string() };
 
     return <>
@@ -62,7 +63,7 @@ export const LoginPresentation = forwardRef<HTMLFormElement, Props>( ({ username
                     </p>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                    <IonButton type="submit">
+                    <IonButton type="submit" disabled={ !isValid }>
                         Login
                     </IonButton>
                 </div>
