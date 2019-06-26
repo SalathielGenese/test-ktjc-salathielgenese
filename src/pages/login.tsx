@@ -59,14 +59,22 @@ export const Login = () => {
 
         const submitListener = ( event: FormEvent<HTMLFormElement> ) => {
             event.preventDefault();
-            // TODO: Handle login
-            console.log({ username, password });
+
+            const wasValid = isValid;
+
+            setIsValid( false );
+            // FIXME: Implement login submission
+            Promise.resolve().then( () => {
+                // TODO: Redirect...
+            }).catch( error => {
+                // TODO: Log errors
+            });
         };
 
         current.addEventListener( 'submit', submitListener as never );
 
         return () => current.removeEventListener( 'submit', submitListener as never );
-    }, [ formRef, username, password ]);
+    }, [ formRef, isValid, username, password ]);
 
     return <LoginPresentation
         ref={ formRef }
