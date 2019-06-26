@@ -1,6 +1,6 @@
+import { Plugins, CameraResultType, CameraSource } from '@capacitor/core';
 import React, { useRef, useState, FormEvent, useEffect } from 'react';
 import { RegisterPresentation } from './register-presentation';
-
 
 
 export const Register = () => {
@@ -45,14 +45,26 @@ export const Register = () => {
 
         if ( !current ) return;
 
-        // FIXME to base64 string when we get image from camera OR filesystem
-        const inputListener = ( event: FormEvent<HTMLIonInputElement> ) =>
-            setImage( event.currentTarget.value! )
-        ;
+        const focusListener = ( event: FormEvent<HTMLIonInputElement> ) => {
+            event.preventDefault();
+            current.readonly = true;
+            Plugins.Camera.getPhoto({
+                source: CameraSource.Camera,
+                resultType: CameraResultType.Base64,
+            }).then( ({ base64String }) => {
+                console.log({ base64String });
+                setImage( base64String! );
+            }).catch( error => {
+                // FIXME: Log errors
+                // TODO: Forward error message for UX
+            }).then( () => {
+                current.readonly = false;
+            });
+        };
 
-        current.addEventListener( 'input', inputListener as never );
+        current.addEventListener( 'ionFocus', focusListener as never );
 
-        return () => current.removeEventListener( 'input', inputListener as never );
+        return () => current.removeEventListener( 'ionFocus', focusListener as never );
     }, [ imageRef ]);
 
     useEffect( () => {
