@@ -1,5 +1,7 @@
 {
   "name": "Salathiel's KTJC test",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "react"
 }
