@@ -1,3 +1,7 @@
+import { Moment } from 'moment';
+
+
+
 export interface Pharmacy {
     responsible?: string;
     junction?: string;
@@ -7,8 +11,8 @@ export interface Pharmacy {
     town?: string;
     name?: string;
     open?: {
-        start?: Date;
-        stop?: Date;
+        start?: Moment;
+        stop?: Moment;
     };
     id?: number;
 }
