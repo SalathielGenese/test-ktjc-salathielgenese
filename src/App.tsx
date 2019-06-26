@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { IonPage, IonRouterOutlet } from '@ionic/react';
-import Home from './pages/Home';
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/core/css/core.css";
@@ -19,13 +18,15 @@ import "@ionic/core/css/text-transformation.css";
 import "@ionic/core/css/flex-utils.css";
 import "@ionic/core/css/display.css";
 
+import { Login } from './pages/login';
+
 const App: React.SFC = () => (
   <Router>
-    <Route exact path="/" render={() => <Redirect to="/home"/>} />
+    <Route exact path="/" render={() => <Redirect to="/login"/>} />
     <div className="App">
       <IonPage>
         <IonRouterOutlet>
-          <Route path="/:tab(home)" component={Home} exact={true} />
+          <Route path="/login" component={ Login } exact={true} />
         </IonRouterOutlet>
       </IonPage>
     </div>
