@@ -14,8 +14,8 @@ export type Props =
         username?: MutableRefObject<HTMLIonInputElement | null>,
         password?: MutableRefObject<HTMLIonInputElement | null>,
         lastname?: MutableRefObject<HTMLIonInputElement | null>,
-        telephone?: MutableRefObject<HTMLIonInputElement | null>,
         firstname?: MutableRefObject<HTMLIonInputElement | null>,
+        telephone?: MutableRefObject<HTMLIonInputElement | null>,
         repassword?: MutableRefObject<HTMLIonInputElement | null>,
     };
 
