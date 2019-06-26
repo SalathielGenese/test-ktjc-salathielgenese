@@ -52,8 +52,8 @@ export const Register = () => {
                 source: CameraSource.Camera,
                 resultType: CameraResultType.Base64,
             }).then( ({ base64String }) => {
-                console.log({ base64String });
                 setImage( base64String! );
+                current.value = base64String;
             }).catch( error => {
                 // FIXME: Log errors
                 // TODO: Forward error message for UX
