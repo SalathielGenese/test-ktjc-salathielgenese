@@ -66,7 +66,7 @@ export const Login = () => {
         current.addEventListener( 'submit', submitListener as never );
 
         return () => current.removeEventListener( 'submit', submitListener as never );
-    }, [ formRef ]);
+    }, [ formRef, username, password ]);
 
     return <LoginPresentation
         ref={ formRef }
