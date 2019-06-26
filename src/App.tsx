@@ -18,6 +18,8 @@ import "@ionic/core/css/text-transformation.css";
 import "@ionic/core/css/flex-utils.css";
 import "@ionic/core/css/display.css";
 
+import { PharmacyNew } from './pages/pharmacy/new';
+import { Profile } from './pages/user/profile';
 import { Register } from './pages/register';
 import { Login } from './pages/login';
 import Home from './pages/Home';
@@ -31,6 +33,8 @@ const App: React.SFC = () => (
           <Route path="/" component={ Home } exact={true} />
           <Route path="/login" component={ Login } exact={true} />
           <Route path="/register" component={ Register } exact={true} />
+          <Route path="/profile" component={ Profile } exact={true} />
+          <Route path="/pharmacy/new" component={ PharmacyNew } exact={true} />
         </IonRouterOutlet>
       </IonPage>
     </div>
