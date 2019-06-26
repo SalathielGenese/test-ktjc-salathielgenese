@@ -52,6 +52,22 @@ export const Login = () => {
         return () => current.removeEventListener( 'input', inputListener as never );
     }, [ passwordRef ]);
 
+    useEffect( () => {
+        const { current } = formRef;
+
+        if ( !current ) return;
+
+        const submitListener = ( event: FormEvent<HTMLFormElement> ) => {
+            event.preventDefault();
+            // TODO: Handle login
+            console.log({ username, password });
+        };
+
+        current.addEventListener( 'submit', submitListener as never );
+
+        return () => current.removeEventListener( 'submit', submitListener as never );
+    }, [ formRef ]);
+
     return <LoginPresentation
         ref={ formRef }
         isValid={ isValid }
