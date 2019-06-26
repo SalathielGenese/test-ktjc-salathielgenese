@@ -1,5 +1,6 @@
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonInput, IonRow, IonCol, IonButton } from '@ionic/react';
 import React, { MutableRefObject, forwardRef } from 'react';
+import { Navigation } from '../widget/navigation';
 import { Random } from '../utils/random';
 import { Link } from 'react-router-dom';
 
@@ -22,6 +23,7 @@ export const LoginPresentation = forwardRef<HTMLFormElement, Props>( ({ isValid,
             </IonToolbar>
         </IonHeader>
         <IonContent padding>
+            <Navigation/>
             <form ref={ ref }>
                 <div>
                     <label htmlFor={ id.username }>

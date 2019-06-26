@@ -1,4 +1,5 @@
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar, IonList, IonItem, IonAvatar, IonLabel, IonBadge } from '@ionic/react';
+import { Navigation } from '../widget/navigation';
 import React, { MutableRefObject } from 'react';
 import { Pharmacy } from '../model/pharmacy';
 import moment from 'moment';
@@ -19,6 +20,7 @@ export const HomePresentation = ({ search, results = [] }: Props ) =>
             </IonToolbar>
         </IonHeader>
         <IonContent padding>
+            <Navigation/>
             <IonSearchbar animated={ true } ref={ search }/>
             <IonList>
             {
