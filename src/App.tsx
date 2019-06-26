@@ -26,15 +26,15 @@ import Home from './pages/Home';
 
 const App: React.SFC = () => (
   <Router>
-    <Route exact path="/" render={() => <Redirect to="/"/>} />
     <div className="App">
       <IonPage>
         <IonRouterOutlet>
-          <Route path="/" component={ Home } exact={true} />
-          <Route path="/login" component={ Login } exact={true} />
-          <Route path="/register" component={ Register } exact={true} />
-          <Route path="/profile" component={ Profile } exact={true} />
-          <Route path="/pharmacy/new" component={ PharmacyNew } exact={true} />
+          <Route path="/" component={ Home } exact/>
+          <Route path="/login" component={ Login } exact/>
+          <Route path="/profile" component={ Profile } exact/>
+          <Route path="/register" component={ Register } exact/>
+          <Route path="/pharmacy/new" component={ PharmacyNew } exact/>
+          <Route component={ Home }/>
         </IonRouterOutlet>
       </IonPage>
     </div>
