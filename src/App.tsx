@@ -18,6 +18,7 @@ import "@ionic/core/css/text-transformation.css";
 import "@ionic/core/css/flex-utils.css";
 import "@ionic/core/css/display.css";
 
+import { Register } from './pages/register';
 import { Login } from './pages/login';
 
 const App: React.SFC = () => (
@@ -27,6 +28,7 @@ const App: React.SFC = () => (
       <IonPage>
         <IonRouterOutlet>
           <Route path="/login" component={ Login } exact={true} />
+          <Route path="/register" component={ Register } exact={true} />
         </IonRouterOutlet>
       </IonPage>
     </div>
