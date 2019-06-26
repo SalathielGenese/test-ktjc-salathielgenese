@@ -5,6 +5,7 @@ export interface Pharmacy {
     image?: string;
     phone?: string;
     town?: string;
+    name?: string;
     open?: {
         start?: Date;
         stop?: Date;
