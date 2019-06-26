@@ -1,9 +1,15 @@
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar } from '@ionic/react';
-import React from 'react';
+import React, { MutableRefObject } from 'react';
 
 
 
-export const HomePresentation = () =>
+export type Props =
+    & {
+        search?: MutableRefObject<HTMLIonSearchbarElement>,
+    }
+    ;
+
+export const HomePresentation = ({ search }: Props ) =>
     <>
         <IonHeader>
             <IonToolbar>
@@ -11,7 +17,7 @@ export const HomePresentation = () =>
             </IonToolbar>
         </IonHeader>
         <IonContent padding>
-            <IonSearchbar animated={ true }/>
+            <IonSearchbar animated={ true } ref={ search }/>
         </IonContent>
     </>
     ;
