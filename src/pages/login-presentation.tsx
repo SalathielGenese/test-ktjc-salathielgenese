@@ -1,6 +1,7 @@
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonInput, IonRow, IonCol, IonButton } from '@ionic/react';
 import { Random } from '../utils/random';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -43,13 +44,18 @@ export const LoginPresentation = () => {
                     ></IonInput>
                 </div>
                 <br/>
+                <div>
+                    <p>
+                        Don't have an account?
+                        &nbsp;
+                        <Link to="/register">
+                            Register
+                        </Link>
+                    </p>
+                </div>
                 <div style={{ textAlign: 'right' }}>
                     <IonButton type="submit">
                         Login
-                    </IonButton>
-                    <br/>
-                    <IonButton type="button">
-                        Register
                     </IonButton>
                 </div>
             </form>
